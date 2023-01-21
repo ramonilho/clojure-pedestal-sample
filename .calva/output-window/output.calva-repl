@@ -1,0 +1,613 @@
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+(+ 1 1
+); Hooking up nREPL sessions...; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉>  ; Use `alt+enter` to evaluate
+; Jack-in done.
+clj꞉user꞉> 
+(+ 1 1)
+2
+clj꞉user꞉> 2
+; Unable to resolve symbol: help in this context
+clj꞉user꞉> 
+help
+; Syntax error compiling at (.calva/output-window/output.calva-repl:0:0).
+clj꞉user꞉>
+ 
+; Syntax error compiling at (.calva/output-window/output.calva-repl:0:0).
+; Unable to resolve symbol:   in this context
+clj꞉user꞉> (require 'app.core)
+nil
+clj꞉user꞉> 
+nil
+clj꞉user꞉> 
+nil
+clj꞉user꞉> (app.core/-main)
+; Execution error (ArityException) at user/eval23487 (REPL:32).
+; Wrong number of args (0) passed to: app.core/-main
+clj꞉user꞉> (app.core/-main "")
+
+#:io.pedestal.http{:port 5000,
+                   :service-fn #function[io.pedestal.http.impl.servlet-interceptor/interceptor-service-fn/fn--23244],
+                   :host "0.0.0.0",
+                   :type :immutant,
+                   :start-fn #function[io.pedestal.http.immutant/server/fn--26022],
+                   :interceptors
+                   [{:name :io.pedestal.http/log-request,
+                     :enter #function[io.pedestal.interceptor.helpers/on-request/fn--18353],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http/not-found,
+                     :enter nil,
+                     :leave #function[io.pedestal.interceptor.helpers/after/fn--18317],
+                     :error nil}
+                    {:name :io.pedestal.http.ring-middlewares/content-type-interceptor,
+                     :enter nil,
+                     :leave #function[io.pedestal.interceptor.helpers/after/fn--18317],
+                     :error nil}
+                    {:name :io.pedestal.http.route/query-params,
+                     :enter #function[io.pedestal.http.route/fn--19225],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.route/path-params-decoder,
+                     :enter #function[io.pedestal.http.route/fn--19227],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.route/method-param,
+                     :enter #function[io.pedestal.http.route/method-param/fn--19230],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.secure-headers/secure-headers,
+                     :enter nil,
+                     :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--21583],
+                     :error nil}
+                    {:name :io.pedestal.http.route/router,
+                     :enter #function[io.pedestal.http.route/eval19211/fn--19212/fn--19213],
+                     :leave nil,
+                     :error nil}],
+                   :routes #{["/" :get #function[app.core/hello-world] :route-name :hello-world]},
+                   :servlet
+                   #object[io.pedestal.http.servlet.FnServlet 0x66cd59a2 "io.pedestal.http.servlet.FnServlet@66cd59a2"],
+                   :server
+                   #object[org.projectodd.wunderboss.web.undertow.UndertowWeb 0x4ff5579c "org.projectodd.wunderboss.web.undertow.UndertowWeb@4ff5579c"],
+                   :join? false,
+                   :stop-fn #function[io.pedestal.http.immutant/server/fn--26024]}
+clj꞉user꞉> 
+; Evaluating file: core.clj
+#'app.core/-main
+clj꞉app.core꞉> 
+; Evaluating file: core.clj
+#'app.core/-main
+clj꞉app.core꞉> (app.core/-main nil)
+; Execution error (BindException) at sun.nio.ch.Net/bind0 (Net.java:-2).
+; Address already in use
+clj꞉app.core꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> ('app.core/-main nil)
+nil
+clj꞉user꞉> (require 'app.core)
+; Syntax error compiling def at (app/core.clj:11:1).
+; First argument to def must be a Symbol
+clj꞉user꞉> ('app.core/-main nil)
+nil
+clj꞉user꞉> (app.core/-main nil)
+; Execution error (ClassNotFoundException) at java.net.URLClassLoader/findClass (URLClassLoader.java:471).
+; app.core
+clj꞉user꞉> (use 'app.core)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:116:12).
+; namespace 'app.core' not found
+clj꞉user꞉> 
+
+(require 'app.core)
+nil
+clj꞉app.core꞉> (app.core/-main nil)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:123:16).
+; No such var: app.core/-main
+clj꞉app.core꞉> 
+(app.core/-main nil)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:127:1).
+; No such var: app.core/-main
+clj꞉app.core꞉> 
+(require app.core)
+; Syntax error (ClassNotFoundException) compiling at (.calva/output-window/output.calva-repl:131:1).
+; app.core
+clj꞉app.core꞉> 
+(require 'app.core)
+nil
+clj꞉app.core꞉> 
+(app.core/-main nil)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:138:1).
+; No such var: app.core/-main
+clj꞉app.core꞉> 
+(app.core/-main nil)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:142:1).
+; No such var: app.core/-main
+clj꞉app.core꞉> 
+(-main nil)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:146:1).
+; Unable to resolve symbol: -main in this context
+clj꞉app.core꞉> 
+app.core
+; Syntax error (ClassNotFoundException) compiling at (.calva/output-window/output.calva-repl:0:0).
+; app.core
+clj꞉app.core꞉> 
+(require 'app.heroes)
+nil
+clj꞉app.core꞉> (app.heroes/heroes)
+; Execution error (ArityException) at app.core/eval23533 (REPL:156).
+; Wrong number of args (0) passed to: clojure.lang.PersistentVector
+clj꞉app.core꞉> 
+app.heroes/heroes
+[{:name "Clark", :surname "Kent", :hero "Superman"}
+ {:name "Bruce", :surname "Wayne", :hero "Batman"}
+ {:name "James", :surname "Logan", :hero "Wolverine"}
+ {:name "Steve", :surname "Rogers", :hero "Captain America"}
+ {:name "Bruce", :surname "Banner", :hero "Hulk"}]
+clj꞉app.core꞉> 
+app.core/routes
+; Syntax error compiling at (.calva/output-window/output.calva-repl:0:0).
+; No such var: app.core/routes
+clj꞉app.core꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+(require 'app.core)
+nil
+clj꞉user꞉> 
+(app.core/-main nil)
+#:io.pedestal.http{:port 5000,
+                   :service-fn #function[io.pedestal.http.impl.servlet-interceptor/interceptor-service-fn/fn--23242],
+                   :host "0.0.0.0",
+                   :type :immutant,
+                   :start-fn #function[io.pedestal.http.immutant/server/fn--26034],
+                   :interceptors
+                   [{:name :io.pedestal.http/log-request,
+                     :enter #function[io.pedestal.interceptor.helpers/on-request/fn--18351],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http/not-found,
+                     :enter nil,
+                     :leave #function[io.pedestal.interceptor.helpers/after/fn--18315],
+                     :error nil}
+                    {:name :io.pedestal.http.ring-middlewares/content-type-interceptor,
+                     :enter nil,
+                     :leave #function[io.pedestal.interceptor.helpers/after/fn--18315],
+                     :error nil}
+                    {:name :io.pedestal.http.route/query-params,
+                     :enter #function[io.pedestal.http.route/fn--19223],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.route/path-params-decoder,
+                     :enter #function[io.pedestal.http.route/fn--19225],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.route/method-param,
+                     :enter #function[io.pedestal.http.route/method-param/fn--19228],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.secure-headers/secure-headers,
+                     :enter nil,
+                     :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--21581],
+                     :error nil}
+                    {:name :io.pedestal.http.route/router,
+                     :enter #function[io.pedestal.http.route/eval19209/fn--19210/fn--19211],
+                     :leave nil,
+                     :error nil}],
+                   :routes
+                   #{["/heroes/:hero" :get #function[app.heroes/get-hero] :route-name :get-hero]
+                     ["/heroes" :get #function[app.heroes/get-heroes] :route-name :get-heroes]
+                     ["/" :get #function[app.core/hello-world] :route-name :hello-world]},
+                   :servlet
+                   #object[io.pedestal.http.servlet.FnServlet 0x406028 "io.pedestal.http.servlet.FnServlet@406028"],
+                   :server
+                   #object[org.projectodd.wunderboss.web.undertow.UndertowWeb 0x2022c3a1 "org.projectodd.wunderboss.web.undertow.UndertowWeb@2022c3a1"],
+                   :join? false,
+                   :stop-fn #function[io.pedestal.http.immutant/server/fn--26036]}
+clj꞉user꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> (do
+             (require 'app.core)
+             (app.core/-main nil))
+#:io.pedestal.http{:port 5000,
+                   :service-fn #function[io.pedestal.http.impl.servlet-interceptor/interceptor-service-fn/fn--23240],
+                   :host "0.0.0.0",
+                   :type :immutant,
+                   :start-fn #function[io.pedestal.http.immutant/server/fn--26032],
+                   :interceptors
+                   [{:name :io.pedestal.http/log-request,
+                     :enter #function[io.pedestal.interceptor.helpers/on-request/fn--18349],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http/not-found,
+                     :enter nil,
+                     :leave #function[io.pedestal.interceptor.helpers/after/fn--18313],
+                     :error nil}
+                    {:name :io.pedestal.http.ring-middlewares/content-type-interceptor,
+                     :enter nil,
+                     :leave #function[io.pedestal.interceptor.helpers/after/fn--18313],
+                     :error nil}
+                    {:name :io.pedestal.http.route/query-params,
+                     :enter #function[io.pedestal.http.route/fn--19221],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.route/path-params-decoder,
+                     :enter #function[io.pedestal.http.route/fn--19223],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.route/method-param,
+                     :enter #function[io.pedestal.http.route/method-param/fn--19226],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.secure-headers/secure-headers,
+                     :enter nil,
+                     :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--21579],
+                     :error nil}
+                    {:name :io.pedestal.http.route/router,
+                     :enter #function[io.pedestal.http.route/eval19207/fn--19208/fn--19209],
+                     :leave nil,
+                     :error nil}],
+                   :routes
+                   #{["/heroes/:hero" :get #function[app.heroes/get-hero] :route-name :get-hero]
+                     ["/heroes" :get #function[app.heroes/get-heroes] :route-name :get-heroes]
+                     ["/" :get #function[app.core/hello-world] :route-name :hello-world]},
+                   :servlet
+                   #object[io.pedestal.http.servlet.FnServlet 0x58f1183b "io.pedestal.http.servlet.FnServlet@58f1183b"],
+                   :server
+                   #object[org.projectodd.wunderboss.web.undertow.UndertowWeb 0x51f4f803 "org.projectodd.wunderboss.web.undertow.UndertowWeb@51f4f803"],
+                   :join? false,
+                   :stop-fn #function[io.pedestal.http.immutant/server/fn--26034]}
+clj꞉user꞉> 
+; Execution error (BindException) at sun.nio.ch.Net/bind0 (Net.java:-2).
+; Address already in use
+clj꞉user꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> (do
+             (require 'app.core)
+             (app.core/-main nil))
+; Syntax error compiling at (.calva/output-window/output.calva-repl:339:14).
+; No such var: app.core/-main
+clj꞉user꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> #:io.pedestal.http{:port 5000,
+                   :service-fn #function[io.pedestal.http.impl.servlet-interceptor/interceptor-service-fn/fn--21249],
+                   :host "0.0.0.0",
+                   :type :immutant,
+                   :start-fn #function[io.pedestal.http.immutant/server/fn--24041],
+                   :interceptors
+                   [{:name :io.pedestal.http/log-request,
+                     :enter #function[io.pedestal.interceptor.helpers/on-request/fn--16358],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http/not-found,
+                     :enter nil,
+                     :leave #function[io.pedestal.interceptor.helpers/after/fn--16322],
+                     :error nil}
+                    {:name :io.pedestal.http.ring-middlewares/content-type-interceptor,
+                     :enter nil,
+                     :leave #function[io.pedestal.interceptor.helpers/after/fn--16322],
+                     :error nil}
+                    {:name :io.pedestal.http.route/query-params,
+                     :enter #function[io.pedestal.http.route/fn--17230],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.route/path-params-decoder,
+                     :enter #function[io.pedestal.http.route/fn--17232],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.route/method-param,
+                     :enter #function[io.pedestal.http.route/method-param/fn--17235],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.secure-headers/secure-headers,
+                     :enter nil,
+                     :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--19588],
+                     :error nil}
+                    {:name :io.pedestal.http.route/router,
+                     :enter #function[io.pedestal.http.route/eval17216/fn--17217/fn--17218],
+                     :leave nil,
+                     :error nil}],
+                   :routes
+                   #{["/heroes" :get #function[app.heroes/get-heroes] :route-name :get-heroes]
+                     ["/heroes/:hero" :get #function[app.heroes/get-hero] :route-name :get-hero]
+                     ["/" :get #function[app.core/hello-world] :route-name :hello-world]},
+                   :servlet
+                   #object[io.pedestal.http.servlet.FnServlet 0x57e59a76 "io.pedestal.http.servlet.FnServlet@57e59a76"],
+                   :server
+                   #object[org.projectodd.wunderboss.web.undertow.UndertowWeb 0x42454e0d "org.projectodd.wunderboss.web.undertow.UndertowWeb@42454e0d"],
+                   :join? false,
+                   :stop-fn #function[io.pedestal.http.immutant/server/fn--24043]}
+(do
+             (require 'app.core)
+             (app.core/-main nil))
+clj꞉user꞉> 
+; Execution error (BindException) at sun.nio.ch.Net/bind0 (Net.java:-2).
+; Address already in use
+clj꞉user꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+#:io.pedestal.http{:port 5000,
+                   :service-fn #function[io.pedestal.http.impl.servlet-interceptor/interceptor-service-fn/fn--21492],
+                   :host "0.0.0.0",
+                   :type :immutant,
+                   :start-fn #function[io.pedestal.http.immutant/server/fn--24284],
+                   :interceptors
+                   [{:name :io.pedestal.http/log-request,
+                     :enter #function[io.pedestal.interceptor.helpers/on-request/fn--16601],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http/not-found,
+                     :enter nil,
+                     :leave #function[io.pedestal.interceptor.helpers/after/fn--16565],
+                     :error nil}
+                    {:name :io.pedestal.http.ring-middlewares/content-type-interceptor,
+                     :enter nil,
+                     :leave #function[io.pedestal.interceptor.helpers/after/fn--16565],
+                     :error nil}
+                    {:name :io.pedestal.http.route/query-params,
+                     :enter #function[io.pedestal.http.route/fn--17473],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.route/path-params-decoder,
+                     :enter #function[io.pedestal.http.route/fn--17475],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.route/method-param,
+                     :enter #function[io.pedestal.http.route/method-param/fn--17478],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.secure-headers/secure-headers,
+                     :enter nil,
+                     :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--19831],
+                     :error nil}
+                    {:name :io.pedestal.http.route/router,
+                     :enter #function[io.pedestal.http.route/eval17459/fn--17460/fn--17461],
+                     :leave nil,
+                     :error nil}],
+                   :routes
+                   #{["/heroes" :get #function[app.heroes/get-heroes] :route-name :get-heroes]
+                     ["/heroes/:hero" :get #function[app.heroes/get-hero] :route-name :get-hero]
+                     ["/" :get #function[app.core/hello-world] :route-name :hello-world]},
+                   :servlet
+                   #object[io.pedestal.http.servlet.FnServlet 0x4c66256b "io.pedestal.http.servlet.FnServlet@4c66256b"],
+                   :server
+                   #object[org.projectodd.wunderboss.web.undertow.UndertowWeb 0x5f6979d5 "org.projectodd.wunderboss.web.undertow.UndertowWeb@5f6979d5"],
+                   :join? false,
+                   :stop-fn #function[io.pedestal.http.immutant/server/fn--24286]}
+(do
+             (require 'app.core)
+             (app.core/-main nil))
+clj꞉user꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+(do (require 'app.core) (app.core/-main nil))
+#:io.pedestal.http{:port 5000,
+                   :service-fn #function[io.pedestal.http.impl.servlet-interceptor/interceptor-service-fn/fn--23240],
+                   :host "0.0.0.0",
+                   :type :immutant,
+                   :start-fn #function[io.pedestal.http.immutant/server/fn--26032],
+                   :interceptors
+                   [{:name :io.pedestal.http/log-request,
+                     :enter #function[io.pedestal.interceptor.helpers/on-request/fn--18349],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http/not-found,
+                     :enter nil,
+                     :leave #function[io.pedestal.interceptor.helpers/after/fn--18313],
+                     :error nil}
+                    {:name :io.pedestal.http.ring-middlewares/content-type-interceptor,
+                     :enter nil,
+                     :leave #function[io.pedestal.interceptor.helpers/after/fn--18313],
+                     :error nil}
+                    {:name :io.pedestal.http.route/query-params,
+                     :enter #function[io.pedestal.http.route/fn--19221],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.route/path-params-decoder,
+                     :enter #function[io.pedestal.http.route/fn--19223],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.route/method-param,
+                     :enter #function[io.pedestal.http.route/method-param/fn--19226],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.secure-headers/secure-headers,
+                     :enter nil,
+                     :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--21579],
+                     :error nil}
+                    {:name :io.pedestal.http.route/router,
+                     :enter #function[io.pedestal.http.route/eval19207/fn--19208/fn--19209],
+                     :leave nil,
+                     :error nil}],
+                   :routes
+                   #{["/" :get #function[app.core/hello-world] :route-name :hello-world]
+                     ["/heroes/:hero" :get #function[app.heroes/get-hero] :route-name :get-hero]
+                     ["/heroes" :get #function[app.heroes/get-heroes] :route-name :get-heroes]},
+                   :servlet
+                   #object[io.pedestal.http.servlet.FnServlet 0xedb38ac "io.pedestal.http.servlet.FnServlet@edb38ac"],
+                   :server
+                   #object[org.projectodd.wunderboss.web.undertow.UndertowWeb 0x5037f14f "org.projectodd.wunderboss.web.undertow.UndertowWeb@5037f14f"],
+                   :join? false,
+                   :stop-fn #function[io.pedestal.http.immutant/server/fn--26034]}
+clj꞉user꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+(do (require 'app.core) (app.core/-main nil))
+#:io.pedestal.http{:port 5000,
+                   :service-fn #function[io.pedestal.http.impl.servlet-interceptor/interceptor-service-fn/fn--21492],
+                   :host "0.0.0.0",
+                   :type :immutant,
+                   :start-fn #function[io.pedestal.http.immutant/server/fn--24284],
+                   :interceptors
+                   [{:name :io.pedestal.http/log-request,
+                     :enter #function[io.pedestal.interceptor.helpers/on-request/fn--16601],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http/not-found,
+                     :enter nil,
+                     :leave #function[io.pedestal.interceptor.helpers/after/fn--16565],
+                     :error nil}
+                    {:name :io.pedestal.http.ring-middlewares/content-type-interceptor,
+                     :enter nil,
+                     :leave #function[io.pedestal.interceptor.helpers/after/fn--16565],
+                     :error nil}
+                    {:name :io.pedestal.http.route/query-params,
+                     :enter #function[io.pedestal.http.route/fn--17473],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.route/path-params-decoder,
+                     :enter #function[io.pedestal.http.route/fn--17475],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.route/method-param,
+                     :enter #function[io.pedestal.http.route/method-param/fn--17478],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http.secure-headers/secure-headers,
+                     :enter nil,
+                     :leave #function[io.pedestal.http.secure-headers/secure-headers/fn--19831],
+                     :error nil}
+                    {:name :io.pedestal.http.route/router,
+                     :enter #function[io.pedestal.http.route/eval17459/fn--17460/fn--17461],
+                     :leave nil,
+                     :error nil}
+                    {:name :io.pedestal.http/json-body,
+                     :enter nil,
+                     :leave #function[io.pedestal.interceptor.helpers/on-response/fn--16622],
+                     :error nil}],
+                   :routes
+                   #{["/heroes" :get #function[app.heroes/get-heroes] :route-name :get-heroes]
+                     ["/" :get #function[app.core/hello-world] :route-name :hello-world]
+                     ["/heroes/:hero" :get #function[app.heroes/get-hero] :route-name :get-hero]},
+                   :servlet
+                   #object[io.pedestal.http.servlet.FnServlet 0x230dcab "io.pedestal.http.servlet.FnServlet@230dcab"],
+                   :server
+                   #object[org.projectodd.wunderboss.web.undertow.UndertowWeb 0x66a7143 "org.projectodd.wunderboss.web.undertow.UndertowWeb@66a7143"],
+                   :join? false,
+                   :stop-fn #function[io.pedestal.http.immutant/server/fn--24286]}
+clj꞉user꞉> 
+; nREPL Connection was closed
